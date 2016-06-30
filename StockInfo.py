@@ -92,9 +92,10 @@ if __name__ == "__main__":
         os.mkdir(sub_folder)
     os.chdir(sub_folder)
     start_time = time.time()  # user can change the max index number getInfo(10), by default is getInfo(5)
-    if not sys.argv[1]:
+    if len(sys.argv) <2:
         n = raw_input("Input Period : ? mins to download every cycle")
-    n=int(sys.argv[1])
+    else:
+        n=int(sys.argv[1])
     execute_task(n)
     end_time = time.time()
     print "Total time: %s s." % str(round((end_time - start_time), 4))
